@@ -13,13 +13,15 @@ class FaceView: UIView
 {
 
     //TODO: SETUP VAR
+    @IBInspectable
     var lineWidth: CGFloat = 3 { didSet {setNeedsDisplay()} }
     
+    @IBInspectable
     var color : UIColor = UIColor(red: 0.3, green: 0.2, blue: 0.5, alpha: 1) {didSet{needsUpdateConstraints()}}
     
     // UIColor.redColor()
 
-    
+    @ IBInspectable
     var scale : CGFloat = 0.90{didSet{needsUpdateConstraints()}}
     
 

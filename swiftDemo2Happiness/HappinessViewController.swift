@@ -10,8 +10,25 @@ import UIKit
 
 class HappinessViewController: UIViewController {
 
+    //TODO: setup Var
+    
+    var happiness: Int = 50
+        { // 0 = VERY SAD . 100 = ECSTATIC
+        
+            didSet
+            {
+                happiness = min(max(happiness, 0), 100)
+                
+                print("happiness = \(happiness)")
+                
+                updateUI()
+            }
+        }
+    
+    // TODO: FUNCTION
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -21,15 +38,11 @@ class HappinessViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func updateUI()
+    {
+        
     }
-    */
 
+ 
 }
