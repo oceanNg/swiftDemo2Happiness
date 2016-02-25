@@ -16,6 +16,9 @@ class HappinessViewController: UIViewController, faceViewDataSource
         {
         didSet{
             faceView.dataSource = self
+            faceView.addGestureRecognizer(UIPinchGestureRecognizer (target: faceView, action: "didScale:"))
+            
+            faceView .addGestureRecognizer(UIPanGestureRecognizer (target: faceView, action: "changeHappiness:"))
             
         }
     }
@@ -36,6 +39,10 @@ class HappinessViewController: UIViewController, faceViewDataSource
         }
     
     // TODO: FUNCTION
+    
+    @IBAction func changeHappiness(sender: UIPanGestureRecognizer) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,5 +69,5 @@ class HappinessViewController: UIViewController, faceViewDataSource
         
     }
 
- 
+    
 }

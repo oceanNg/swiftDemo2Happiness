@@ -86,7 +86,16 @@ class FaceView: UIView
         
     }
 
-    
+    func didScale (gesture : UIPinchGestureRecognizer)
+    {
+        if gesture.state == .Changed
+        {
+            scale *= gesture.scale
+            
+            gesture.scale = 1
+            
+        }
+    }
     func bezierPathForEye(whichEye : Eye) -> UIBezierPath
     {
         let eyeRadius = faceRadius / Scaling.FaceRadiusToEyeRadiusRatio
