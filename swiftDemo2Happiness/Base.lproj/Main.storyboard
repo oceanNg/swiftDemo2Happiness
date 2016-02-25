@@ -40,6 +40,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="faceView" destination="0vo-Y0-dgS" id="xiK-B7-Eiu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9L-NN-FVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

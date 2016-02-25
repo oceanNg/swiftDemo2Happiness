@@ -7,8 +7,12 @@
 //
 
 import UIKit
+protocol faceViewDataSource : class
+{
+    func smillinessFoFaceView(sender : FaceView)-> Double?
+    
+}
 @ IBDesignable
-
 class FaceView: UIView
 {
 
@@ -18,7 +22,6 @@ class FaceView: UIView
     
     @IBInspectable
     var color : UIColor = UIColor(red: 0.3, green: 0.2, blue: 0.5, alpha: 1) {didSet{needsUpdateConstraints()}}
-    
     // UIColor.redColor()
 
     @ IBInspectable
@@ -35,6 +38,8 @@ class FaceView: UIView
          return min(bounds.size.width, bounds.size.height)/2 * scale
     
     }
+    
+    weak var dataSource: faceViewDataSource?
     
     enum Eye {case Left , Right}
 
@@ -69,7 +74,9 @@ class FaceView: UIView
 
         bezierPathForEye(.Right).stroke()
 
-        let smiliness = -0.5
+        let smiliness = dataSource?.smillinessFoFaceView(self) ?? 0.0
+        // ?? is if - else
+        //-0.5 original
         
         let smilePath = bezierPathForSmile(smiliness)
         

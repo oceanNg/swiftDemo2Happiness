@@ -8,11 +8,21 @@
 
 import UIKit
 
-class HappinessViewController: UIViewController {
+class HappinessViewController: UIViewController, faceViewDataSource
+{
 
-    //TODO: setup Var
     
-    var happiness: Int = 50
+    @IBOutlet weak var faceView: FaceView!
+        {
+        didSet{
+            faceView.dataSource = self
+            
+        }
+    }
+    
+    //TODO: setup Var
+
+    var happiness: Int = 10
         { // 0 = VERY SAD . 100 = ECSTATIC
         
             didSet
@@ -41,6 +51,14 @@ class HappinessViewController: UIViewController {
     
     func updateUI()
     {
+        faceView.setNeedsDisplay()
+        
+    }
+    
+    func smillinessFoFaceView(sender: FaceView) -> Double?
+    {
+         return Double(happiness-50) / 50
+        
         
     }
 
