@@ -17,41 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vo-Y0-dgS" customClass="FaceView" customModule="swiftDemo2Happiness" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVb-FG-R0W" customClass="FaceView" customModule="swiftDemo2Happiness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.25490196079999999" green="0.58039215690000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="XmT-Jn-ETO" appends="YES" id="MuK-BO-0Cv"/>
+                                    <outletCollection property="gestureRecognizers" destination="Lex-qQ-nV7" appends="YES" id="H2p-VK-AZf"/>
                                 </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0vo-Y0-dgS" firstAttribute="top" secondItem="7Nm-nA-glG" secondAttribute="top" id="Kr3-IW-SJB"/>
-                            <constraint firstItem="yco-wU-9sv" firstAttribute="top" secondItem="0vo-Y0-dgS" secondAttribute="bottom" id="aHQ-Rc-Nxd"/>
-                            <constraint firstAttribute="trailing" secondItem="0vo-Y0-dgS" secondAttribute="trailing" id="pc9-AP-ebV"/>
-                            <constraint firstItem="0vo-Y0-dgS" firstAttribute="leading" secondItem="7Nm-nA-glG" secondAttribute="leading" id="x3k-86-RIv"/>
+                            <constraint firstAttribute="trailing" secondItem="VVb-FG-R0W" secondAttribute="trailing" id="A3F-f3-wUk"/>
+                            <constraint firstItem="VVb-FG-R0W" firstAttribute="top" secondItem="7Nm-nA-glG" secondAttribute="top" id="GJV-6d-9o3"/>
+                            <constraint firstItem="yco-wU-9sv" firstAttribute="top" secondItem="VVb-FG-R0W" secondAttribute="bottom" id="P81-fG-KaF"/>
+                            <constraint firstItem="VVb-FG-R0W" firstAttribute="leading" secondItem="7Nm-nA-glG" secondAttribute="leading" id="u3R-nq-VzF"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="faceView" destination="0vo-Y0-dgS" id="xiK-B7-Eiu"/>
+                        <outlet property="faceView" destination="VVb-FG-R0W" id="gxp-sa-DMB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9L-NN-FVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="XmT-Jn-ETO">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Lex-qQ-nV7">
                     <connections>
-                        <action selector="changeHappiness:" destination="CP7-ng-Hqy" id="oKh-Yq-ebb"/>
+                        <action selector="changeHappiness:" destination="CP7-ng-Hqy" id="kxh-6P-gTR"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

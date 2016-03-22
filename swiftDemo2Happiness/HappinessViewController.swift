@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class HappinessViewController: UIViewController, faceViewDataSource
 {
 
@@ -18,7 +20,7 @@ class HappinessViewController: UIViewController, faceViewDataSource
             faceView.dataSource = self
             faceView.addGestureRecognizer(UIPinchGestureRecognizer (target: faceView, action: "didScale:"))
             
-            faceView .addGestureRecognizer(UIPanGestureRecognizer (target: faceView, action: "changeHappiness:"))
+//            faceView .addGestureRecognizer(UIPanGestureRecognizer (target: faceView, action: "changeHappiness:"))
             
         }
     }
@@ -26,7 +28,7 @@ class HappinessViewController: UIViewController, faceViewDataSource
     //TODO: setup Var
 
     var happiness: Int = 10
-        { // 0 = VERY SAD . 100 = ECSTATIC
+        { // 0 = VERY SAD . 100 = ECSTATIC	
         
             didSet
             {
@@ -38,9 +40,34 @@ class HappinessViewController: UIViewController, faceViewDataSource
             }
         }
     
+     private struct Constants {
+        
+         static let HappinessGestureSacle : CGFloat = 4
+    }
+    
     // TODO: FUNCTION
     
-    @IBAction func changeHappiness(sender: UIPanGestureRecognizer) {
+    @IBAction func changeHappiness(sender: UIPanGestureRecognizer)
+    {
+        switch sender.state
+        {
+            case .Ended : fallthrough
+            
+            case .Changed:
+                let translation = sender.translationInView(faceView)
+                
+                let happinessChange = -Int (translation.y / Constants.HappinessGestureSacle)
+            
+                if happinessChange != 0
+                {
+                    happiness += happinessChange
+                    
+                    sender.setTranslation(CGPointZero, inView: faceView)
+            }
+        default : break
+            
+        }
+        
     }
     
     override func viewDidLoad() {
